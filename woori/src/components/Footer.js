@@ -1,60 +1,67 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-4 mt-5">
-      <div className="container">
-        <div className="row">
-          {/* 로고 및 소개 */}
-          <div className="col-md-4 mb-3">
-            <h5>로고</h5>
-            <p>
-              하나둘하나둘~~
-            </p>
-          </div>
-
-          {/* 메뉴 링크 */}
-          <div className="col-md-4 mb-3">
-            <h5>메뉴</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/" className="text-white text-decoration-none">
-                  홈
-                </a>
-              </li>
-              <li>
-                <a href="/category/mens-clothing" className="text-white text-decoration-none">
-                  2
-                </a>
-              </li>
-              <li>
-                <a href="/category/womens-clothing" className="text-white text-decoration-none">
-                  3
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-white text-decoration-none">
-                  4
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* 연락처 */}
-          <div className="col-md-4">
-            <h5>연락처</h5>
-            <p>이메일: ㅇㅇㅇㅇㅇ</p>
-            <p>전화번호: 123-456-7890</p>
-            <p>주소: 인천 남동구</p>
-          </div>
+    <footer className="footer">
+      <div className="footer-container">
+        {/* 첫 번째 열: 회사 정보 */}
+        <div className="footer-column">
+          <Link to="/" className="footer-logo">
+            <img
+              src="https://via.placeholder.com/120x40?text=LOGO"
+              alt="쇼핑몰 로고"
+            />
+          </Link>
+          <p className="footer-description">
+            123123
+          </p>
         </div>
 
-        <hr className="border-light" />
-
-        <div className="text-center">
-          <p className="mb-0">&copy; 123123123123</p>
+        {/* 두 번째 열: 빠른 메뉴 */}
+        <div className="footer-column">
+          <h4 className="footer-title">빠른 메뉴</h4>
+          <ul className="footer-links">
+            <li>
+              <Link to="/about">회사 소개</Link>
+            </li>
+            <li>
+              <Link to="/help">고객센터</Link>
+            </li>
+            <li>
+              <Link to="/terms">이용 약관</Link>
+            </li>
+            <li>
+              <Link to="/privacy">개인정보 보호</Link>
+            </li>
+          </ul>
         </div>
+
+        {/* 세 번째 열: 구독 및 소셜 */}
+        <div className="footer-column">
+          <h4 className="footer-title">구독하기</h4>
+          <p className="footer-text">최신 소식을 받기 위해 이메일을 등록하세요!</p>
+          <form className="subscribe-form">
+            <input type="email" placeholder="이메일 입력" />
+            <button type="submit">구독</button>
+          </form>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              🌐
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              🐦
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              📸
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>© 2025 쇼핑몰 이름. All rights reserved.</p>
       </div>
     </footer>
   );

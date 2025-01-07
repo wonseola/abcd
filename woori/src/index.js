@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Router>
-        <style>
+    <style>
       {`
         body, html {
           margin: 0;

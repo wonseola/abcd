@@ -1,9 +1,10 @@
 import React from 'react';
-import Slider from 'react-slick'; // 슬라이더 컴포넌트
+import Slider from 'react-slick';
 import ProductCard from '../components/ProductCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css'; // Slick 기본 스타일 적용
+import 'slick-carousel/slick/slick-theme.css';
+import './HomePage.css';
 
 const HomePage = () => {
   const products = [
@@ -19,46 +20,54 @@ const HomePage = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 2000,
-    centerMode: true, // 슬라이드 중앙 정렬 모드
+    autoplaySpeed: 2500,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
   };
 
   return (
-    <div className="container-fluid mt-4">
-      <div className="banner-container" style={{ margin: '0', padding: '0' }}>
-        <div style={{ width: '100vw', margin: '0', padding: '0' }}>
-          <img
-            src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1huN/image/5tx_kOBrDw5vx6CIIV2Hf6ay0uw.jpg"
-            alt="Welcome Banner"
-            className="img-fluid"
-            style={{ width: '100vw', height: '400px', objectFit: 'cover', display: 'block', margin: '0', padding: '0' }}
-          />
+    <div className="homepage-container">
+      {/* 배너 섹션 */}
+      <div className="banner-container">
+        <div className="banner-overlay">
+          <h1 className="banner-title">배너 배너 </h1>
+          <p className="banner-subtitle">아니면 이미지 ~~ </p>
         </div>
+        <img
+          src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/1huN/image/5tx_kOBrDw5vx6CIIV2Hf6ay0uw.jpg"
+          alt="Welcome Banner"
+          className="banner-image"
+        />
       </div>
 
-      <div>
-        <h2 className="text-center mb-4">추천</h2>
+      {/* 추천 제품 슬라이더 */}
+      <div className="slider-section">
+        <h2 className="section-title">추천</h2>
         <Slider {...sliderSettings}>
           {products.map((product) => (
             <div key={product.id} className="slide-item">
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div className="product-card-wrapper">
                 <ProductCard product={product} />
               </div>
             </div>
           ))}
         </Slider>
+      </div>
 
-        <br />
-        <br />
-        <h2 className="text-center mb-4">마감 임박</h2>
+      {/* 마감 임박 슬라이더 */}
+      <div className="slider-section">
+        <h2 className="section-title">마감 임박</h2>
         <Slider {...sliderSettings}>
           {products.map((product) => (
             <div key={product.id} className="slide-item">
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div className="product-card-wrapper">
                 <ProductCard product={product} />
               </div>
             </div>

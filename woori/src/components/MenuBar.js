@@ -1,58 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './MenuBar.css';
+
+const pages = [
+  { name: '메뉴1', path: '/category/mens-clothing', subOptions: ['옵션1', '옵션2', '옵션3'] },
+  { name: '메뉴2', path: '/category/womens-clothing', subOptions: ['옵션1', '옵션2', '옵션3'] },
+  { name: '메뉴3', path: '/category/electronics', subOptions: ['옵션1', '옵션2', '옵션3'] },
+  { name: '메뉴4', path: '/sale', subOptions: ['옵션1', '옵션2'] },
+  { name: '메뉴5', path: '/new-arrivals', subOptions: [] },
+];
 
 const MenuBar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#fbbe17', padding: '1rem' }}>
-      <div className="container-fluid">
-        {/* 반응형 토글 버튼 (모바일 화면) */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarMenu"
-          aria-controls="navbarMenu"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-        <div className="collapse navbar-collapse" id="navbarMenu">
-          <ul className="navbar-nav mx-auto justify-content-center" style={{ gap: '7rem' }}>
-            <li className="nav-item">
-              <Link to="/" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                홈
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/category/mens-clothing" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                메뉴1
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/category/womens-clothing" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                메뉴2
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/category/electronics" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                메뉴3
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/sale" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                메뉴4
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/new-arrivals" className="nav-link" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                메뉴5
-              </Link>
-            </li>
-          </ul>
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
+
+  return (
+    <nav className="menu-bar">
+      <div className="menu-container">
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰
         </div>
+        <ul className={`menu-links ${isMenuOpen ? 'show' : ''}`}>
+          {pages.map((page) => (
+            <li key={page.name} className="menu-item">
+              <Link to={page.path} className="menu-link">
+                {page.name}
+              </Link>
+              {page.subOptions.length > 0 && (
+                <ul className="dropdown-menu">
+                  {page.subOptions.map((option, index) => (
+                    <li key={index} className="dropdown-item">
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

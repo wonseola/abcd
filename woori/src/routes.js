@@ -9,7 +9,7 @@ import CartPage from './pages/CartPage';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/abcd" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/product/:id" element={<ProductDetailPage />} />

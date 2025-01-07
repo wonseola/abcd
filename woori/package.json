@@ -2,6 +2,7 @@
   "name": "woori",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wonseola.github.io/abcd/",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
@@ -30,7 +31,6 @@
       "react-app/jest"
     ]
   },
- 
   "browserslist": {
     "production": [
       ">0.2%",
