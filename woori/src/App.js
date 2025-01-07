@@ -9,11 +9,11 @@ import 'slick-carousel/slick/slick-theme.css';
 const App = () => {
   return (
     <div className="app-container">
-      <Header /> {/* 공통 Header */}
+      <Header /> 
       <main>
-        <AppRoutes /> {/* AppRoutes는 <Routes>와 <Route>만 포함 */}
+        <AppRoutes />
       </main>
-      <Footer /> {/* 공통 Footer */}
+      <Footer /> 
     </div>
   );
 };

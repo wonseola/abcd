@@ -7,6 +7,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Router>
+        <style>
+      {`
+        body, html {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          overflow-x: hidden;
+        }
+      `}
+    </style>
     <App />
   </Router>
 );
