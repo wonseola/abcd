@@ -5,7 +5,7 @@ import MenuBar from './MenuBar';
 const Header = () => {
   return (
     <header className="header">
-      <div className="top-bar bg-light p-3 d-flex justify-content-between align-items-center">
+      <div className="top-bar bg-light p-3 d-flex justify-content-between align-items-center mx-4">
         <Link to="/" className="navbar-brand">
           <img
             src="https://via.placeholder.com/120x40?text=LOGO"
