@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import AppRoutes from './routes';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Header /> {/* 공통 Header */}
+      <main>
+        <AppRoutes /> {/* AppRoutes는 <Routes>와 <Route>만 포함 */}
+      </main>
+      <Footer /> {/* 공통 Footer */}
     </div>
   );
-}
+};
 
 export default App;
