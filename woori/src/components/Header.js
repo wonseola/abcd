@@ -1,33 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import MenuBar from './MenuBar';
 import './Header.css';
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="top-bar">
-        <div className="logo-search-container">
-          <Link to="/abcd" className="logo">
-            <img
-              src="https://via.placeholder.com/120x40?text=LOGO"
-              alt="쇼핑몰 로고"
-            />
-          </Link>
-          <div className="search-bar">
-            <input type="text" placeholder="검색어를 입력하세요..." />
-          </div>
-        </div>
-        <div className="header-actions">
-          <Link to="/login" className="btn-login">
-            로그인
-          </Link>
-          <Link to="/signup" className="btn-signup">
-            회원가입
-          </Link>
-        </div>
+      <div className="logo">
+        <span className="logo-text">infocom</span>
+        <span className="beta"></span>
       </div>
-      <MenuBar />
+      <nav className="nav">
+        <ul>
+          <li>메뉴123</li>
+          <li>메뉴123</li>
+          <li>메뉴123</li>
+          <li>메뉴123</li>
+          <li>메뉴123</li>
+          <li className="divider">|</li>
+          <li className="bold">메뉴123 메뉴123</li>
+          <li>메뉴123 메뉴123</li>
+        </ul>
+      </nav>
+      <div className="header-actions">
+        <button className="search-button">🔍</button>
+        <button className="help-button">?</button>
+        <button className="signup-button">로그인 / 회원가입</button>
+      </div>
     </header>
   );
 };
