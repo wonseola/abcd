@@ -1,6 +1,6 @@
 .search-section {
     padding: 40px 20px;
-    background-color: #ffffff;
+    background-color: #f9fafb; /* 밝은 배경색 */
     text-align: center;
 }
 
@@ -8,22 +8,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 30px; */
 }
 
 .search-input {
     width: 100%;
     max-width: 40rem;
-    border: 1px solid #ddd;
-    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
     font-size: 18px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+    font-style: italic;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+    background-color: #f0f8ff; /* 포커스 시 밝은 블루 배경 */
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.2); /* 포커스 시 그림자 강조 */
+}
+
+.search-button {
+    margin-left: -50px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-button img {
+    width: 24px;
+    height: 24px;
 }
 
 .icon-section {
@@ -31,17 +51,26 @@
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.icon-search-card {
+.icon-card {
     width: 60px;
-    /* 크기 조정 */
     height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-card:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-5px);
 }
 
 .icon-card img {
