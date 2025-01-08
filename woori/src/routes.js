@@ -3,17 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import CartPage from './pages/CartPage';
+import MyPage from './pages/MyPage';
+import DetailListPage from './pages/DetailListPage';
 
-const AppRoutes = () => {
+const AppRoutes = ({ onLogin, isLoggedIn }) => {
   return (
     <Routes>
       <Route path="/abcd" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage onLogin={onLogin} />} /> {/* onLogin 전달 */}
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/product/:id" element={<ProductDetailPage />} />
-      <Route path="/cart" element={<CartPage />} />
+      <Route path="/events/:category" element={<DetailListPage />} />
+      <Route path="/mypage" element={isLoggedIn ? <MyPage /> : <LoginPage onLogin={onLogin} />} />
     </Routes>
   );
 };

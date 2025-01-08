@@ -5,72 +5,183 @@
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid #e0e0e0;
-}
-
-.logo {
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
     font-size: 24px;
     font-weight: bold;
     color: #222;
-}
-
-.logo-text {
-    font-family: 'Arial', sans-serif;
-}
-
-.beta {
-    font-size: 12px;
-    margin-left: 4px;
-    color: #666;
-}
-
-.nav ul {
+    margin-right: 30px;
+  }
+  
+  .nav {
+    flex: 2;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 24px; /* 메뉴 간 간격 */
     padding: 0;
     margin: 0;
-}
-
-.nav li {
-    font-size: 16px;
+  }
+  
+  .nav li {
+    font-size: 18px; /* 글씨 크기 */
     cursor: pointer;
-    color: #333;
-}
-
-.divider {
-    color: #ccc;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.header-actions {
+    color: #333; /* 기본 색상 */
+    padding: 8px 16px; /* 패딩 추가로 여백 주기 */
+    border-radius: 4px; /* 살짝 둥글게 */
+    transition: all 0.3s ease;
+  }
+  
+  .nav li:hover {
+    background-color: #f0f4ff; /* 호버 시 배경색 */
+    color: #0056b3; /* 텍스트 색상 */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
+  }
+  
+  .nav a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 링크 색상 유지 */
+  }
+  
+  .nav a:hover {
+    text-decoration: none; /* 호버 시 밑줄 제거 */
+  }
+  
+  
+  
+  .header-actions {
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 12px;
-}
-
-.search-button,
-.help-button {
+    gap: 16px;
+  }
+  
+  .search-button,
+  .help-button {
     font-size: 18px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-}
-
-.signup-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 8px 16px;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .auth-links a {
+    padding: 10px 20px;
     border-radius: 8px;
     font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .auth-links a:first-child {
+    background-color: white;
+    color: #0056b3; /* 버튼 텍스트 색상 */
+    border: 2px solid #0056b3;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-links a:first-child:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  .auth-links a:last-child {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .auth-links a:last-child:hover {
+    background-color: #004080;
+  }
+  
+  .profile-menu {
+    position: relative;
+  }
+  
+  .profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
-}
-
-.signup-button:hover {
-    background-color: #333;
-}
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+  }
+  
+  .profile-icon img:hover {
+    border-color: #0056b3;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    z-index: 10;
+    min-width: 200px; /* 메뉴 너비 */
+  }
+  
+  .dropdown-menu a,
+  .logout-button {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdown-menu a:hover,
+  .logout-button:hover {
+    background-color: #e6f0ff;
+    color: #0056b3;
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .dropdown-divider {
+    height: 1px;
+    margin: 8px 0;
+    background-color: #e0e0e0;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .logo-link:hover {
+    opacity: 0.8;
+  }
+  
+  

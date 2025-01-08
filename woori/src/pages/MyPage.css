@@ -1,0 +1,83 @@
+.mypage-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mypage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .mypage-header h2 {
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .mypage-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .mypage-header button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mypage-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .mypage-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .mypage-profile-info {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .mypage-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .mypage-item {
+    flex: 1 1 calc(50% - 10px);
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mypage-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .mypage-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .mypage-item p {
+    font-size: 14px;
+    color: #666;
+  }
+  
