@@ -1,9 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.homepage {
+  max-width: 100vw;
+  /* 화면 너비 전체를 차지 */
+  margin: 0 auto;
+}
+
+.main-content {
+  padding: 0 20px;
+  /* 메인 콘텐츠의 양옆 최소 여백 */
+}
+
+.banner-container {
+  width: 100vw;
+  /* 배너가 좌우로 화면을 꽉 채움 */
+  margin: 0 auto;
+  /* 중앙 정렬 */
+  padding: 0;
+}
+
+.banner-slide {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  /* 상하 크기 제한 */
+  height: auto;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  /* 이미지가 비율을 유지하며 꽉 차도록 */
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.banner-text h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.banner-text p {
+  font-size: 16px;
+}
+
+.search-container {
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.icon-section {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.icon-card {
+  flex: 0 0 140px;
+  padding: 15px;
+  text-align: center;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon-card:hover {
+  background-color: #ced4da;
+}
+
 .content-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin: 40px 0;
+  padding: 0 10rem;
+  /* 좌우 여백 추가 */
 }
+
 
 .grid-item {
   background-color: #f8f9fa;
@@ -51,85 +147,6 @@
 
 .grid-item a:hover {
   text-decoration: underline;
-}
-
-
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-.homepage {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  padding: 0;
-}
-
-.nav li {
-  cursor: pointer;
-}
-
-.login-buttons button {
-  margin-left: 8px;
-}
-
-.signup {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-}
-
-.search-container {
-  margin: 20px 0;
-  padding: 20px;
-}
-
-.search-container input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.icon-section {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 10px 0;
-}
-
-.icon-card {
-  flex: 0 0 140px;
-  padding: 15px;
-  text-align: center;
-  background-color: #e9ecef;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.icon-card:hover {
-  background-color: #ced4da;
 }
 
 .feature-section {
