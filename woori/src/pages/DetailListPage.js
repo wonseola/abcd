@@ -1,29 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import EventFilter from '../components/EventFilter';
 import LectureList from '../components/LectureList';
+import dummyLectures from '../data/dummyLectures';
 import './DetailListPage.css';
 
 const DetailListPage = () => {
-  const dummyLectures = [
-    { title: 'React 워크숍', date: '2025-01-20', location: '서울', description: 'React 입문자를 위한 강좌' },
-    { title: 'AI 세미나', date: '2025-01-25', location: '부산', description: 'AI 기술 동향 및 실습' },
-    { title: '스타트업 투자 설명회', date: '2025-02-05', location: '온라인', description: '투자 설명회 안내' },
-  ];
+  const { category } = useParams();
+  const [filters, setFilters] = useState({
+    location: '',
+    date: '',
+    type: [],
+    search: '',
+  });
+
+  const handleFilterChange = (newFilters) => {
+    setFilters({ ...filters, ...newFilters });
+  };
+
+  const filteredLectures = dummyLectures.filter((lecture) => {
+    const matchesCategory = category === 'menu' || lecture.category === category;
+    const matchesLocation = filters.location ? lecture.location === filters.location : true;
+    const matchesType = filters.type.length ? filters.type.includes(lecture.type) : true;
+    const matchesSearch = filters.search ? lecture.title.toLowerCase().includes(filters.search.toLowerCase()) : true;
+    return matchesCategory && matchesLocation && matchesType && matchesSearch;
+  });
 
   return (
     <div className="detail-list-page">
       <div className="content-container">
-        {/* 왼쪽 필터 */}
         <aside className="filter-section">
-          <EventFilter />
+          <EventFilter onFilterChange={handleFilterChange} />
         </aside>
 
-        {/* 오른쪽 강의 리스트 */}
         <section className="lecture-section">
           <div className="lecture-header">
-            <h3>0개의 강의가 검색되었습니다.</h3>
+            <h3>{filteredLectures.length}개의 강의가 검색되었습니다.</h3>
           </div>
-          <LectureList lectures={dummyLectures} />
+          <LectureList lectures={filteredLectures} />
         </section>
       </div>
     </div>

@@ -6,11 +6,14 @@ const Header = ({ isLoggedIn, onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // 드롭다운 메뉴 상태
   const location = useLocation();
   const menuItems = [
+    { label: '전체 보기', path: '/events/menu' },
     { label: '메뉴 1', path: '/events/menu1' },
     { label: '메뉴 2', path: '/events/menu2' },
     { label: '메뉴 3', path: '/events/menu3' },
     { label: '메뉴 4', path: '/events/menu4' },
   ];
+
+  const hostMenu = { label: '등록', path: '/company' };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,15 +29,19 @@ const Header = ({ isLoggedIn, onLogout }) => {
       </div>
 
       <nav className="nav">
-        <ul>
+        <ul className="menu-list">
           {menuItems.map((item) => (
             <li
               key={item.path}
-              className={location.pathname === item.path ? 'active' : ''}
+              className={`menu-item ${location.pathname === item.path ? 'active' : ''}`}
             >
               <Link to={item.path}>{item.label}</Link>
             </li>
           ))}
+          <span className="divider">|</span>
+          <li className="menu-host">
+            <Link to={hostMenu.path} className="bold-host">{hostMenu.label}</Link>
+          </li>
         </ul>
       </nav>
 

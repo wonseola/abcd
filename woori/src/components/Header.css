@@ -184,4 +184,37 @@
     opacity: 0.8;
   }
   
+  .menu-list {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 메뉴 간격 */
+  }
+  
+  .menu-item a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .divider {
+    color: #ccc;
+    font-size: 18px;
+    margin: 0 8px;
+  }
+  
+  .menu-host a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .menu-host a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
   

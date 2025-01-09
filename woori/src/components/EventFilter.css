@@ -65,3 +65,61 @@
   text-decoration: underline;
 }
 
+
+.search-input-filter {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 18px;
+  background-color: transparent;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.search-input-filter::placeholder {
+  color: #aaa;
+  font-size: 16px;
+}
+
+.search-input-filter:focus {
+  outline: none;
+  border-bottom-color: #007bff; /* 포커스 시 하단 색상 강조 */
+}
+
+.filter-group h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+
+
+.region-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap; /* 버튼이 화면 너비를 넘어가면 자동 줄바꿈 */
+}
+
+.region-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.region-button:hover {
+  background-color: #f0f4ff;
+  border-color: #007bff;
+}
+
+.region-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}

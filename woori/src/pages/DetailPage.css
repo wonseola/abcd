@@ -1,0 +1,137 @@
+.detail-page {
+  padding: 1rem 12rem;
+  background-color: #f9f9f9;
+}
+
+.lecture-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.lecture-info {
+  flex: 2;
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.lecture-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.lecture-header-content {
+  padding: 24px;
+}
+
+.lecture-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.lecture-category {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.lecture-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.lecture-details {
+  padding: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.detail-info-section {
+  padding: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.detail-info-section h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.detail-info-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.application-card {
+  flex: 1;
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: sticky;
+  top: 20px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.apply-button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #5e72e4;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #3b59d4;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.share-button,
+.favorite-button {
+  width: 48%;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.share-button:hover,
+.favorite-button:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .lecture-container {
+    flex-direction: column;
+  }
+
+  .application-card {
+    margin-top: 20px;
+  }
+}

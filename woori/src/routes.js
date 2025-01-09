@@ -8,6 +8,7 @@ import DetailListPage from './pages/DetailListPage';
 // import SignupPersonalPage from './pages/SignupPersonalPage';
 // import SignupCompanyPage from './pages/SignupCompanyPage';
 import SignupFormPage from './pages/SignupFormPage';
+import DetailPage from './pages/DetailPage';
 
 const AppRoutes = ({ onLogin, isLoggedIn }) => {
   return (
@@ -20,6 +21,8 @@ const AppRoutes = ({ onLogin, isLoggedIn }) => {
       <Route path="/signup/personal" element={<SignupPersonalPage />} />
       <Route path="/signup/company" element={<SignupCompanyPage />} /> */}
       <Route path="/signup" element={<SignupFormPage />} />
+      <Route path="/event/:id" element={<DetailPage />} /> 
+      <Route path="/company" element={<HomePage />} /> 
     </Routes>
   );
 };

@@ -1,0 +1,49 @@
+.lecture-card-link {
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상 유지 */
+    display: block;
+  }
+  
+  .lecture-card-link:hover .lecture-title {
+    color: #007bff; /* 호버 시 색상 변경 */
+  }
+  
+  .lecture-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .lecture-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+  
+.lecture-card {
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.lecture-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.lecture-description {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 42px; /* 설명 부분 높이 고정 */
+  line-height: 1.5;
+}
+
